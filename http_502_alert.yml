@@ -1,0 +1,11 @@
+groups:
+- name: website-monitoring
+  rules:
+  - alert: WebsiteHttp502
+    expr: probe_http_status_code == 502
+    for: 1m
+    labels:
+      severity: critical
+    annotations:
+      summary: "Website response 502"
+      description: "{{ $labels.instance }} returned status 502."
