@@ -1,4 +1,4 @@
-**Monitoring Stack with Prometheus, Grafana, Alertmanager and Exporters**
+## **Monitoring Stack with Prometheus, Grafana, Alertmanager and Exporters**
 
         This Docker Compose file sets up a complete monitoring stack including:
 
@@ -89,7 +89,7 @@
         Ports: 9104
         Credentials Config: mysql/my.cnf
 
-**🚀 Getting Started**
+## **🚀 Getting Started**
 
 **1. Clone this repository:**
 
@@ -117,7 +117,7 @@
 
         Alertmanager: http://<IP-host-machine>:9093
 
-**📁 Folder Structure**
+### **📁 Folder Structure**
 
 .
 ├── docker-compose.yml
@@ -131,7 +131,7 @@
 │   ├── init.sql             # Grant permission account exporter
 │   └── my.cnf               # Connect from mysql-exporter to mysql
 
-**🖼️ Result Screenshots:**
+## **🖼️ Result Screenshots:**
 
 
 **🐳 Running Containers:**
