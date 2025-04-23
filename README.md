@@ -127,14 +127,14 @@ grant execution: chmod +x install-docker-compose.sh
 Running script: ./install-docker-compose.sh
 
 3. Change token_id and chat_id in file config.yml to sent alert on Telegram
-![alt text](image.png)
+![alt text](images/telegram_id.png)
 
-
-4. Start the stack:
+4. Start the stack: (about 2-3 min)
 
 docker-compose up -d
 
 5. Access services:
+
 Prometheus: http://<IP-host-machine>:9090
 
 Grafana: http://<IP-host-machine>:3000
@@ -156,15 +156,22 @@ Alertmanager: http://<IP-host-machine>:9093
 
 🖼️ Result Screenshots:
 🐳 Running Containers:
-
+![Docker Containers](images/docker-container.png)
 📊 Grafana Dashboard:
-
+![Grafana Dashboard](images/grafana-1.png)
+![Grafana Dashboard](images/grafana-2.png)
+![Grafana Dashboard](images/grafana-3.png)
+![Grafana Dashboard](images/grafana-4.png)
+![Grafana Dashboard](images/grafana-5.png)
+![Grafana Dashboard](images/grafana-6.png)
 🧠 Prometheus Targets:
-
+![Prometheus Targets](images/prometheus-1.png)
+![Prometheus Targets](images/prometheus-2.png)
 🚨 Alertmanager:
-
+![Alertmanager](images/alertmanager-1.png)
+![Alertmanager](images/alertmanager-2.png)
 📬 Telegram Alerts:
-
+![Telegram Alert](images/telegram-alert.png)
 
 
 🛠️ Notes
