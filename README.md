@@ -134,12 +134,12 @@
 ## **🖼️ Result Screenshots:**
 
 
-**🐳 Running Containers:**
+### **🐳 Running Containers:**
 
 ![Docker Containers](images/docker-container.png)
 
 
-**📊 Grafana Dashboard:**
+### **📊 Grafana Dashboard:**
 
 **Datasource:**
 
@@ -166,19 +166,19 @@
 ![Grafana Dashboard](images/grafana-6.png)
 
 
-**🧠 Prometheus Targets:**
+### **🧠 Prometheus Targets:**
 
 ![Prometheus Targets](images/prometheus-1.png)
 ![Prometheus Targets](images/prometheus-2.png)
 
 
-**🚨 Alertmanager:**
+### **🚨 Alertmanager:**
 
 ![Alertmanager](images/alertmanager-1.png)
 ![Alertmanager](images/alertmanager-2.png)
 
 
-**📬 Telegram Alerts:**
+### **📬 Telegram Alerts:**
 
 ![Telegram Alert](images/telegram-alert.png)
 
