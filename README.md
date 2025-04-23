@@ -141,27 +141,27 @@
 
 **📊 Grafana Dashboard:**
 
-        Datasource:
+**Datasource:**
 
 ![Grafana Dashboard](images/grafana-1.png)
 
-        Folder Dashboard:
+**Folder Dashboard:**
 
 ![Grafana Dashboard](images/grafana-2.png)
 
-        Node-Exporter:
+**Node-Exporter:**
 
 ![Grafana Dashboard](images/grafana-3.png)
 
-        MySQL:
+**MySQL:**
 
 ![Grafana Dashboard](images/grafana-4.png)
 
-        MongoDB:
+**MongoDB:**
 
 ![Grafana Dashboard](images/grafana-5.png)
 
-        Blackbox-Exporter:
+**Blackbox-Exporter:**
 
 ![Grafana Dashboard](images/grafana-6.png)
 
