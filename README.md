@@ -10,7 +10,7 @@
         MongoDB + MongoDB Exporter
         MySQL + MySQL Exporter
 
-**📦 Services Overview**
+### **📦 Services Overview**
 
 **1. Prometheus**
 
@@ -89,7 +89,7 @@
         Ports: 9104
         Credentials Config: mysql/my.cnf
 
-## **🚀 Getting Started**
+## **🚀 Getting Started** 
 
 **1. Clone this repository:**
 
@@ -109,7 +109,7 @@
 
         docker-compose up -d
 
-**5. Access services:**
+**5. Access services: (choose short display time on grafana or wait a few minutes)**
 
         Prometheus: http://<IP-host-machine>:9090
 
