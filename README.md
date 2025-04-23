@@ -1,147 +1,149 @@
-Monitoring Stack with Prometheus, Grafana, Alertmanager and Exporters
-This Docker Compose file sets up a complete monitoring stack including:
+**Monitoring Stack with Prometheus, Grafana, Alertmanager and Exporters**
+        This Docker Compose file sets up a complete monitoring stack including:
 
-Prometheus
+        Prometheus
 
-Grafana
+        Grafana
 
-Alertmanager
+        Alertmanager
 
-Node Exporter
+        Node Exporter
 
-Blackbox Exporter
+        Blackbox Exporter
 
-MongoDB + MongoDB Exporter
+        MongoDB + MongoDB Exporter
 
-MySQL + MySQL Exporter
+        MySQL + MySQL Exporter
 
-📦 Services Overview
-1. Prometheus
-Image: prom/prometheus:v2.51.2
+**📦 Services Overview**
+**1. Prometheus**
+        Image: prom/prometheus:v2.51.2
 
-Purpose: Core time-series database and monitoring engine.
+        Purpose: Core time-series database and monitoring engine.
 
-Ports: 9090
+        Ports: 9090
 
-Config Files:
+        Config Files:
 
-prometheus.yml: main configuration
+        prometheus.yml: main configuration
 
-http_502_alert.yml: alert rules
+        http_502_alert.yml: alert rules
 
-2. Grafana
-Image: grafana/grafana:11.0.0
+**2. Grafana**
+        Image: grafana/grafana:11.0.0
 
-Purpose: Visualization and dashboard UI.
+        Purpose: Visualization and dashboard UI.
 
-Ports: 3000
+        Ports: 3000
 
-Credentials:
+        Credentials:
 
-admin / admin
+        admin / admin
 
-Provisioning: Mounted provisioning folder for data sources and dashboards.
+        Provisioning: Mounted provisioning folder for data sources and dashboards.
 
-🛠️ Notes: 
-Dashboards included: Blackbox Overview, Mongo Overwiew, MySQL Overview, Node Exporter Overview
+**🛠️ Notes:**
+        Dashboards included: Blackbox Overview, Mongo Overwiew, MySQL Overview, Node Exporter Overview
 
-3. Alertmanager
-Image: prom/alertmanager:v0.27.0
+**3. Alertmanager**
+        Image: prom/alertmanager:v0.27.0
 
-Purpose: Handles alerts sent by Prometheus and sent to telegram
+        Purpose: Handles alerts sent by Prometheus and sent to telegram
 
-Ports: 9093
+        Ports: 9093
 
-Config File: config.yml
+        Config File: config.yml
 
-🛠️ Notes:
-Need update token_id and chat_id in file config.yml
+**🛠️ Notes:**
+        Need update token_id and chat_id in file config.yml
 
-4. Node Exporter
-Image: prom/node-exporter:latest
+**4. Node Exporter**
+        Image: prom/node-exporter:latest
 
-Purpose: Export host-level metrics (CPU, memory, disk...).
+        Purpose: Export host-level metrics (CPU, memory, disk...).
 
-Ports: 9100
+        Ports: 9100
 
-5. Blackbox Exporter
-Image: prom/blackbox-exporter:latest
+**5. Blackbox Exporter**
+        Image: prom/blackbox-exporter:latest
 
-Purpose: Monitor external endpoints (HTTP, TCP...).
+        Purpose: Monitor external endpoints (HTTP, TCP...).
 
-Ports: 9115
+        Ports: 9115
 
-Config File: blackbox.yml
+        Config File: blackbox.yml
 
-6. MongoDB
-Image: mongo:7.0
+**6. MongoDB**
+        Image: mongo:7.0
 
-Purpose: Sample database to monitor.
+        Purpose: Sample database to monitor.
 
-Ports: 27017
+        Ports: 27017
 
-Credentials:
+        Credentials:
 
-admin / adminpass
+        admin / adminpass
 
-7. MongoDB Exporter
-Image: bitnami/mongodb-exporter:0.39.0
+**7. MongoDB Exporter**
+        Image: bitnami/mongodb-exporter:0.39.0
 
-Purpose: Exposes MongoDB metrics to Prometheus.
+        Purpose: Exposes MongoDB metrics to Prometheus.
 
-Ports: 9216
+        Ports: 9216
 
-8. MySQL
-Image: mysql:8.0
+**8. MySQL**
+        Image: mysql:8.0
 
-Purpose: Sample relational database.
+        Purpose: Sample relational database.
 
-Ports: 3306
+        Ports: 3306
 
-Credentials:
+        Credentials:
 
-Root: rootpassword
+        Root: rootpassword
 
-User: exporter / exporterpassword
+        User: exporter / exporterpassword
 
-Init Script: mysql/init.sql
+        Init Script: mysql/init.sql
 
-9. MySQL Exporter
-Image: prom/mysqld-exporter
+**9. MySQL Exporter**
+        Image: prom/mysqld-exporter
 
-Purpose: Exposes MySQL metrics to Prometheus.
+        Purpose: Exposes MySQL metrics to Prometheus.
 
-Ports: 9104
+        Ports: 9104
 
-Credentials Config: mysql/my.cnf
+        Credentials Config: mysql/my.cnf
 
-🚀 Getting Started
-1. Clone this repository:
+**🚀 Getting Started**
+**1. Clone this repository:**
 
-git clone https://github.com/sangnt1990/monitoring.git
-cd monitoring
+        git clone https://github.com/sangnt1990/monitoring.git
+        cd monitoring
 
-2. Install docker and docker compose (if server does not have)
+**2. Install docker and docker compose (if server does not have)**
 
-grant execution: chmod +x install-docker-compose.sh
-Running script: ./install-docker-compose.sh
+        Grant execution: chmod +x install-docker-compose.sh
+        Running script: ./install-docker-compose.sh
 
-3. Change token_id and chat_id in file config.yml to sent alert on Telegram
-![alt text](images/telegram_id.png)
+**3. Change token_id and chat_id in file config.yml to sent alert on Telegram**
 
-4. Start the stack: (about 2-3 min)
+![token-id](images/telegram-id.png)
 
-docker-compose up -d
+**4. Start the stack: (about 2-3 min)**
 
-5. Access services:
+        docker-compose up -d
 
-Prometheus: http://<IP-host-machine>:9090
+**5. Access services:**
 
-Grafana: http://<IP-host-machine>:3000
+        Prometheus: http://<IP-host-machine>:9090
 
-Alertmanager: http://<IP-host-machine>:9093
+        Grafana: http://<IP-host-machine>:3000
 
-📁 Folder Structure
+        Alertmanager: http://<IP-host-machine>:9093
+
+**📁 Folder Structure**
+
 .
 ├── docker-compose.yml
 ├── prometheus.yml
@@ -154,27 +156,43 @@ Alertmanager: http://<IP-host-machine>:9093
 │   ├── init.sql             # Grant permission account exporter
 │   └── my.cnf               # Connect from mysql-exporter to mysql
 
-🖼️ Result Screenshots:
-🐳 Running Containers:
+**🖼️ Result Screenshots:**
+
+
+**🐳 Running Containers:**
+
 ![Docker Containers](images/docker-container.png)
-📊 Grafana Dashboard:
+
+
+**📊 Grafana Dashboard:**
+
 ![Grafana Dashboard](images/grafana-1.png)
 ![Grafana Dashboard](images/grafana-2.png)
 ![Grafana Dashboard](images/grafana-3.png)
 ![Grafana Dashboard](images/grafana-4.png)
 ![Grafana Dashboard](images/grafana-5.png)
 ![Grafana Dashboard](images/grafana-6.png)
-🧠 Prometheus Targets:
+
+
+**🧠 Prometheus Targets:**
+
 ![Prometheus Targets](images/prometheus-1.png)
 ![Prometheus Targets](images/prometheus-2.png)
-🚨 Alertmanager:
+
+
+**🚨 Alertmanager:**
+
 ![Alertmanager](images/alertmanager-1.png)
 ![Alertmanager](images/alertmanager-2.png)
-📬 Telegram Alerts:
+
+
+**📬 Telegram Alerts:**
+
 ![Telegram Alert](images/telegram-alert.png)
 
 
-🛠️ Notes
+**🛠️ Notes:**
+
 Ensure your custom config files (Prometheus, Blackbox, Alertmanager, etc.) are properly formatted before running the stack.
 
 You can extend this setup with additional exporters depending on your use case.
